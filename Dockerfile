@@ -12,9 +12,10 @@ RUN PKGS='nodejs' && \
     yum clean all -y && \
     echo 'Installation of nodeJs was successful :)'
 
-RUN echo 'contianer starting' && \
-    chmod -R 777 /usr/local/hello
+#Change folder permission.
+RUN chmod -R 777 /usr/local/hello
 
 WORKDIR /usr/local/hello
 
-CMD npm install && npm start
+#Command when container starts up.
+CMD echo 'Hello from container!' && npm install && npm start
